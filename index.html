@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function add(a, b) {
+            g = a + b;
+            return "add" + " " + g;
+        }
+
+        function sub(a, b) {
+            g = a - b;
+            return "sub" + " " + g;
+        }
+
+        function divide(a, b) {
+            g = a / b;
+            return "divide" + " " + g;
+        }
+
+        function multiple(a, b) {
+            g = a * b;
+            return "multiple" + " " + g;
+        }
+
+        function mod(a, b) {
+            g = a % b;
+            return "mod" + " " + g;
+        }
+
+        function pt1(a, b) {
+            if(a == 0) {
+                if(b == 0) {
+                    return "Phuong trinh vo so nghiem";
+                }
+                return "Phuong trinh vo nghiem";
+            }
+            g = -b/a;
+            return "pt1" + " " + "co nghiem duy nhat la" + " " + g;
+        }
+
+        function pt1(a, b) {
+            if(a == 0) {
+                if(b == 0) {
+                    return "Phuong trinh vo so nghiem";
+                }
+                return "Phuong trinh vo nghiem";
+            }
+            g = -b/a;
+            return "pt1" + " " + "co nghiem duy nhat la" + " " + g;
+        }
+
+        function pt2(a, b, c) {
+            if (a == 0) {
+                return pt1(b, c);
+            }
+            deta= b*b - 4*a*c;
+            if(deta < 0) {
+                return "Phuong trinh vo nghiem";
+            }
+            else if(deta == 0) {
+                return "Phuong trinh co nghiem kep la" + " " + - b/(2*a);
+            }
+            else {
+                x1 = (-b + Math.sqrt(deta))/(2*a);
+                x2 = (-b - Math.sqrt(deta))/(2*a);
+                return "Phuong trinh co 2 nghiem phan biet la" + " " + x1 + " " + "va" + " " + x2;
+            }
+        }
+
+        a = 10;
+        b = 5;
+        c = 4;
+
+
+
+        kq= ["a =" + " " + a,"b =" + " " + b, "c =" + " " + c, add(a, b), sub(a, b), multiple(a, b), divide(a, b), mod(a,b), pt1(a, b), pt2(a, b, c)];
+        // kq = [pt(0, 3)];
+
+        kq.forEach(function(value) {
+            console.log(value);
+        });
+        console.log("-----------------");
+        console.error(kq);
+
+        date = 2021;
+        if(date % 4 == 0) {
+            if(date % 100 == 0) {
+                if(date % 400 == 0) {
+                    console.log("Nam " + date +" la nam nhuan");
+                } else {
+                    console.log("Nam " + date +" khong phai la nam nhuan");
+                }
+            } else {
+                console.log("Nam " + date +" la nam nhuan");
+            }
+        } else {
+            console.log("Nam " + date + " khong phai la nam nhuan");
+        }
+
+        //tính can-chi
+        function tinhCanChi(date) {
+            const can = ["Canh", "Tan", "Nham", "Quy", "Giap", "At", "Binh", "Dinh", "Mau", "Ky"];
+            const chi = ["Than", "Dau", "Tuat", "Hoi", "Ty", "Suu", "Dan", "Mao", "Thin", "Ty", "Ngo", "Mui"];
+            let kqcan = date % 10;
+            let kqchi = date % 12;
+            return can[kqcan] + " " + chi[kqchi];
+        }
+
+        console.log("Nam " + date + " la nam " + tinhCanChi(date));
+
+
+    </script>
+</body>
+</html>
